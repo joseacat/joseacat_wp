@@ -12,14 +12,54 @@ Text Domain: wordpycat
 
 :root{
 	/* Colores */
-	--primario: #005B82;
-	--secundario: #00B9E4;
-    	--terciario: #FAC5FF;
 	--blanco: #FFFFFF;
+	--negro: #000000;
+    --dorado: #cdb89b;
+	--verde-claro: #64b050;
+	--verde-oscuro: #0e2328;
 
 	/* Medidas */
-	--acotado: 990px;
+	--acotado: 1080px;
 }
+
+/* Fuentes */
+@font-face {
+    font-family: "Firacode";
+    src: url("./recursos/fonts/FiraCode-Light.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Firacode";
+    src: url("./recursos/fonts/FiraCode-Regular.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Firacode";
+    src: url("./recursos/fonts/FiraCode-Medium.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Firacode";
+    src: url("./recursos/fonts/FiraCode-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Firacode";
+    src: url("./recursos/fonts/FiraCode-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+/* Fin Fuentes */
+
 /* Reset */
 *,
 *::before,
@@ -30,21 +70,14 @@ Text Domain: wordpycat
 }
 ul:not([class]),
 ol:not([class]) {
-	padding: 0;
-    	list-style: none;
+	
 }
 ol:not([class]){
-    	counter-reset: section;
-}
-ol:not([class]) > li:before{
-    	counter-increment: section;
-    	content: counters(section, ".") ". ";
-    	color: var(--rojo);
-    	margin-right: 8px;
+    counter-reset: section;
 }
 ul:not([class]) li,
 ol:not([class]) li{
-	margin: 0 0 20px;
+	margin: 0 0 8px;
 }
 ul:not([class])  ul:not([class]){
 	margin-top: 20px;
@@ -100,17 +133,16 @@ select{
     	color: var(--color-texto);
     	padding: 11px;
 }
-button:not(.plus):not(.minus){
-    	border-radius: 44px;
-    	padding: 10px 24px 10px 45px;
-    	border: 0;
-}
 /* Fin Reset */
 
 
 /* General */
 html{
-	background: var(--blanco);
+	background: var(--verde-oscuro);
+	color: var(--blanco);
+	font-family: 'Firacode', sans-serif;
+	font-size: 16px;
+	line-height: 24px;
 }
 .alignright {
     	float:right;
@@ -129,3 +161,115 @@ a img.aligncenter {
     	margin-left: auto;
     	margin-right: auto;
 }
+a:not([class]){
+	color: var(--verde-claro);
+	text-decoration: underline;
+}
+.acotado{
+	max-width: var(--acotado);
+	margin: 0 auto;
+}
+h1:not([class]),
+h2:not([class]),
+h3:not([class]),
+h4:not([class]),
+h5:not([class]),
+h6:not([class]){
+	margin-bottom: 18px;
+	color: var(--dorado);
+}
+p:not([class]){
+	margin-bottom: 8px;
+}
+.wp-block-image figcaption{
+	text-align: center;
+	font-style: italic;
+}
+.wp-block-button__link,
+button{
+	padding: 8px 18px;
+	font-size: initial;
+	font-weight: 700;
+	color: var(--blanco);
+	border-radius: 0;
+	border: 1px solid;
+	background-color: var(--verde-claro);
+	transition: all 0.4s;
+	cursor: pointer;
+	box-shadow: var(--blanco) 4px 4px 0px 0px;
+}
+.wp-block-button__link:hover,
+button:hover{
+	box-shadow: var(--blanco) 0px 0px 0px 0px;
+}
+.wp-block-code{
+	padding: 18px;
+	border: 2px solid var(--verde-claro);
+	background-color: var(--blanco);
+	color: var(--verde-oscuro);
+}
+.wp-block-code code{
+	font-style: italic;
+}
+.wp-block-pullquote{
+	padding: 28px 18px;
+	border-bottom: 2px solid var(--verde-claro);
+	border-top: 2px solid var(--verde-claro);
+}
+.wp-block-cover .wp-block-cover__inner-container{
+	max-width: var(--acotado);
+	margin-left: auto;
+	margin-right: auto;
+	color: var(--blanco);
+}
+
+.wp-block-search__button{
+	background-color: var(--verde-claro);
+	border-radius: 0;
+}
+.wp-block-search label{
+	display: inline-block;
+	margin-bottom: 8px;
+	font-weight: bold;
+}
+/* Fin General */
+
+/* Cabecera */
+.cabecera-general{
+	padding: 28px 0;
+}
+.cabecera-general-interior{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.cabecera-general-logo img{
+	max-width: 44px;
+}
+.cabecera-general-menu ul.nav{
+	display: flex;
+	align-items: center;
+	list-style: none;
+	padding-inline-start: 0;
+}
+.cabecera-general-menu ul.nav li{
+	padding-left: 28px;
+}
+.cabecera-general-menu a{
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 700;
+	transition: all 0.4s;
+}
+.cabecera-general-menu a:hover{
+	color: var(--blanco);
+}
+/* Fin Cabecera */
+
+/* Pagina */
+.contenido-page > *:not(.alignfull){
+	max-width: var(--acotado);
+	margin-right: auto;
+	margin-left: auto;
+}
+/* Fin Pagina */

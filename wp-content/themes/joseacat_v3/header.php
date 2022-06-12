@@ -12,20 +12,18 @@
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<?php wp_head(); ?>
 	</head>
-	<header>
-		<div>
-			<div>
+	<header class="cabecera-general">
+		<div class="cabecera-general-interior acotado">
+			<div class="cabecera-general-logo">
 				<a href="<?php echo get_site_url(); ?>" title="<?php the_title(); ?>">
 					<?php echo pintar_logo(); ?>
 				</a>
 			</div>
-			<nav role="navigation">
-				<?php wp_nav_menu( array( 'theme_location' => 'menu-principal',  'menu_class' => 'nav navbar-nav' ) ); ?>
-			</nav>
-			<div>
-				<?php get_search_form(); ?>
+			<div class="cabecera-general-menu">
+				<nav role="navigation">
+					<?php wp_nav_menu( array( 'theme_location' => 'menu-principal',  'menu_class' => 'nav navbar-nav', 'container' => 'ul' ) ); ?>
+				</nav>
 			</div>
 		</div>
 	</header>
 	<body <?php body_class(isset($class) ? $class : ''); ?>>
-		<div>
