@@ -9,26 +9,32 @@ get_header(); ?>
 
 <?php
 if(have_posts()){
-	while(have_posts()){
-		?>
-		<?php the_post(); ?>
-		<?php
-		if(has_post_thumbnail()){
-			the_post_thumbnail('thumbnail');
-		}else{
-			?>
-			<img src="<?php echo get_template_directory_uri(); ?>/recursos/img/sin-imagen.jpg" alt="<?php _x('Sin imagen', 'woopycat'); ?>">
+    ?>
+    <main class="contenido-blog">
+		<section class="listado-posts">
 			<?php
-		}
-		?>
-		<a href="<?php the_permalink(); ?>">
-			<?php the_title('<h1>','</h1>'); ?>
-		</a>
-		<?php the_excerpt(); ?>
+			while(have_posts()){
+				the_post();
+			?>
+				<article class="item-blog">
+					<header>
+						<a class="titulo" href="<?php the_permalink(); ?>">
+							<?php the_title(); ?>
+						</a>
+						<span class="fecha">
+							<?php echo get_the_date('d/m/Y'); ?>
+						</span>
+					</header>
+					<div>
+						<?php the_excerpt(); ?>
+					</div>
+				</article>
 		<?php
 	}
-	next_posts_link( '<<');
-	previous_posts_link( '>>' );
+		?>
+		</section>
+    </main>
+    <?php
 }else{
 	?>
 	<h1><?php echo __('No hay contenido', 'wordpycat'); ?></h1>
