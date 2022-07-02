@@ -89,7 +89,7 @@ function pintar_logo(){
     if(has_custom_logo()){
         $texto = '<img src="' . esc_url($logo[0]) . '">';
 	}else{
-        $texto = '<h1>' . get_bloginfo( 'name' ) .  '</h1>';
+        $texto = get_bloginfo( 'name' );
 	}
     return $texto;
 }
