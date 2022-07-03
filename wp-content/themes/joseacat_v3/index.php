@@ -40,6 +40,15 @@ if(have_posts()){
 	<h1><?php echo __('No hay contenido', 'wordpycat'); ?></h1>
 	<?php
 }
-
+?>
+<div class="paginacion acotado">
+	<?php
+	echo paginate_links(array(
+		'prev_text'    => '←',
+		'next_text'    => '→',
+	));
+	?>
+</div>
+<?php
 // Footer
 get_footer();

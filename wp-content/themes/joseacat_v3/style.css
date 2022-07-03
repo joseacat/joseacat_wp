@@ -21,6 +21,7 @@ Text Domain: wordpycat
 	--verde-oscuro: #3F7051;
 	--amarillo: #F0DA7A;
 	--naranja: #F09A6E;
+	--marron: #A3694B;
 
 	/*
 	--blanco: #000000;
@@ -286,7 +287,7 @@ button:hover{
 	transition: all 0.2s;
 }
 .cabecera-general-logo a:hover{
-	color: var(--verde-claro);
+	color: var(--marron);
 	transition: all 0.2s;
 }
 .cabecera-general-menu ul.nav{
@@ -323,6 +324,23 @@ button:hover{
 	color: var(--blanco);
 }
 /* Fin Cabecera */
+
+/* Footer */
+.footer-general{
+	margin-top: 128px;
+	margin-bottom: 68px;
+}
+.footer-general .leyenda-footer{
+	text-align: center;
+	font-size: 16px;
+	margin-bottom: 18px;
+}
+.footer-general .copyright{
+	text-align: center;
+	font-size: 14px;
+	color: var(--gris);
+}
+/* Fin Footer */
 
 /* Pagina */
 body:not(.home) .contenido-page{

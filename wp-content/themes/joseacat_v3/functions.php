@@ -1,7 +1,9 @@
 <?php
-/*
- * Funciones extras para el tema Wordpycat
- */
+include( plugin_dir_path( __FILE__ ) . 'includes/extras.php' );
+include( plugin_dir_path( __FILE__ ) . 'includes/cpt.php' );
+//include( plugin_dir_path( __FILE__ ) . 'includes/blocks.php' );
+//include( plugin_dir_path( __FILE__ ) . 'includes/config.php' );
+
 
 /*
  * Registramos los menús para nuestro tema
@@ -77,19 +79,3 @@ function customizar_tema() {
 }
 add_action( 'after_setup_theme', 'customizar_tema' );
 
-
-
-/**
- * Pinta el logo o la cabecera si no está la imagen configurada
- */
-function pintar_logo(){
-    $texto = '';
-    $logo_id = get_theme_mod('custom_logo');
-    $logo = wp_get_attachment_image_src($logo_id, 'full');
-    if(has_custom_logo()){
-        $texto = '<img src="' . esc_url($logo[0]) . '">';
-	}else{
-        $texto = get_bloginfo( 'name' );
-	}
-    return $texto;
-}
