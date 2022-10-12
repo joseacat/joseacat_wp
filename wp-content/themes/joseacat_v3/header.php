@@ -21,7 +21,7 @@
 			</div>
 			<div class="cabecera-general-menu">
 				<nav role="navigation">
-					<?php wp_nav_menu( array( 'theme_location' => 'menu-principal',  'menu_class' => 'nav navbar-nav', 'container' => 'ul' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'menu-principal',  'menu_class' => 'nav navbar-nav menu-general', 'container' => 'ul' ) ); ?>
 				</nav>
 			</div>
 		</div>
