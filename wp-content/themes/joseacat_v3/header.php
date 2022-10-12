@@ -24,6 +24,9 @@
 					<?php wp_nav_menu( array( 'theme_location' => 'menu-principal',  'menu_class' => 'nav navbar-nav menu-general', 'container' => 'ul' ) ); ?>
 				</nav>
 			</div>
+            <?php if(wp_is_mobile()){ ?>
+
+            <?php } ?>
 		</div>
 	</header>
 	<body <?php body_class(isset($class) ? $class : ''); ?>>
